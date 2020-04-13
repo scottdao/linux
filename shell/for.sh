@@ -9,6 +9,7 @@
 for(( a=0; a<10;a++));
 do
     echo $a
+    sleep  1;
 done
 
-echo 1
+
