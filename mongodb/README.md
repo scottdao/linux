@@ -203,6 +203,20 @@ Index来操作。
       - 查看主从服务器:{isMaster:1}
       - 管理员专用:{listDatabases:1}
       - 重命名:{renameCollection:a,to:b},必须是管理员才能修改。
+    + 设置密码及用户:
+     ```
+        db.createUser({
+          user:name,
+          pwd:password,
+          roles:[{role:"useAdminAnyDatabase", db:"admin"},{role:'', db:"ldy"}]
+        })
+    ```
+    - read:读取数据库的权限
+    - redWrite:读写数据库权限
+    - dbAdmin:执行管理库
+    - root:只在admin数据库中可用，超级权限，超级账号；
+    - userAdmin:允许用户向systems.users集合写入，可以指定数据库里创建删除和管理用户
+
   #### 参考文档
   - (菜鸟教程)[https://www.runoob.com/mongodb/mongodb-indexing.html]
   - (mongodb文档)(https://docs.mongodb.com/)
