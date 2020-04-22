@@ -218,5 +218,5 @@ Index来操作。
     - userAdmin:允许用户向systems.users集合写入，可以指定数据库里创建删除和管理用户
 
   #### 参考文档
-  - (菜鸟教程)[https://www.runoob.com/mongodb/mongodb-indexing.html]
-  - (mongodb文档)(https://docs.mongodb.com/)
+  - [菜鸟教程](https://www.runoob.com/mongodb/mongodb-indexing.html)
+  - [mongodb文档](https://docs.mongodb.com/)
