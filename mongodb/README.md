@@ -170,6 +170,7 @@ neo4j图形数据库
       `db.account.ensureIndex({userName:1,age:1,createTime:1})`
    -  只有索引前部的查询才会得到优化
    - 索引优化查询的同时，会对增删改查带来额外开销。
+   - 查找系统索引:`db.acount.indexes.find()`
   + **唯一索引**
   + (**查询工具**)[https://docs.mongodb.com/manual/reference/explain-results/#queryplanner]
   `db.acount.find({userName:1} ).explain( "executionStats" )`;
@@ -193,7 +194,15 @@ Index来操作。
       3. 计算distinct后的count:`db.runCommand({'distinct':"acount",key:"age"}).values.length`;
       4. `db.runCommand({'distinct':"acount",key:"age", query:{"age":{$gt:30}}}).values.length`
     - 分组：group
-       1. 
+      1.   
+    + [**mongodb命令-db.runCommand({})**](http://127.0.0.1:28017/_commands)
+      -  修复数据库：{repairDatabase:1}
+      - 删除集合:{drop:"collection"}
+      - 删除当前数据库:{dropDataBase:1}
+      - 删除索引:{dropIndexes:collection, index:name}
+      - 查看主从服务器:{isMaster:1}
+      - 管理员专用:{listDatabases:1}
+      - 重命名:{renameCollection:a,to:b},必须是管理员才能修改。
   #### 参考文档
   - (菜鸟教程)[https://www.runoob.com/mongodb/mongodb-indexing.html]
   - (mongodb文档)(https://docs.mongodb.com/)
