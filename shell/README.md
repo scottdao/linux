@@ -26,6 +26,24 @@
   - 用户与文件关系
     - chmod分配权限
       - chmod 755 file
-      - chmod u+x file
-    - acl
+      - chmod u+x file:通过加减进行修改文件权限
+        1. 用户user1和用户user2两个用户，user1对root下的a.txt文件有读写权限，user2对root下不具备读写权限，如何操作：***先将user1加入到root组，use2不加入；在对文件a.txt赋予root组内具有读写权限。**
+        `gpasswd -a user1 root`; `chmod g+w a.txt`
+        2. chmod 数字权限分配：r ,4; w,2; x,1;  755 rwxr-xr-- ; 最高为7=4+2+1,最小为0;
+        **注：**数字分配和命令各区所需。
+        3. 权限细化需求：
+              -  user1 file rw
+              - user2 file rw
+    - acl 权限分配
+       1. setfacl设置文件权限；`setfacl -m u:user1:rw  1.txt`; `setfacl -m u:user2:rwx 1.txt`
+       2. getfacl查看文件权限；`getfacl 1.txt`
+       3. 删除文件权限；`setfacl -x user:user1 1.txt`;
+       4. 清空文件权限; `setfacl -b 1.txt`
+       5.  创建和删除文件；
+          -   需要对目录设置acl权限即可
+          `setfacl -m u:user4:rwx /ldy`
+        6. 如何对目录以及子目录和文件设置 acl权限：加递归。
+             `setfacl -m u:user4:rwx  -R  /mnt/` 对存在的文件和目录设置权限
+        7. 目录中后期添加的子目录和文件如何继承父目录的权限
+              `setfacl -m d:u:user4:rwx -R /mnt/`
     - sudo
