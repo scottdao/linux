@@ -46,4 +46,10 @@
              `setfacl -m u:user4:rwx  -R  /mnt/` 对存在的文件和目录设置权限
         7. 目录中后期添加的子目录和文件如何继承父目录的权限
               `setfacl -m d:u:user4:rwx -R /mnt/`
-    - sudo
+    -  sudo权限
+        1. visudo:`user1 localhost=/usr/sbin/useradd, /usr/sbin/userdel `
+        2. 使用sudo命令；`sudo useradd user1`
+        3. 不需要密码使用sudo 命令：`sudo  ALL=NOPASSWD:/usr/sbin/userdel -r user1`
+  + shell 脚本
+    - 首行解析器命令:`#!/bin/bash`
+    - 
