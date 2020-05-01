@@ -52,4 +52,17 @@
         3. 不需要密码使用sudo 命令：`sudo  ALL=NOPASSWD:/usr/sbin/userdel -r user1`
   + shell 脚本
     - 首行解析器命令:`#!/bin/bash`
-    - 
+    -  执行脚本的方式: `1.bash xxx.sh;2 . ./xxx.sh:`
+    -  shell脚本使用：
+    - shell脚本
+      1. 单引号无法解析变量：
+      2. expr 可以进行加减乘除；
+      3. echo $[] 进行加减乘除；
+      4. echo -n 不换行；
+      5.  \033[前景颜色；背景颜色m
+      6. \033[0m恢复到系统默认的颜色
+      7. 前景:30---37:黑，红，绿，棕，蓝，紫，青，白
+      8. 背景:40---47:黑，红，绿，棕，蓝，紫，青，白
+      9.   cat /etc/passwd |more 查看文件更多内容
+      10.  cat ~/study/linux.md |head 查看文件的前10行
+      11.  cat ~/study/linux.md |tail -2  tail -x 查看尾部x行
