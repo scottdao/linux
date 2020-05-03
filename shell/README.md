@@ -66,3 +66,71 @@
       9.   cat /etc/passwd |more 查看文件更多内容
       10.  cat ~/study/linux.md |head 查看文件的前10行
       11.  cat ~/study/linux.md |tail -2  tail -x 查看尾部x行
+      12.  0条件为真，1为假；
+      13.  -d 表示是否为目录；
+      14. -e 表示目录或者文件是否存在；
+      15. -f 表示是否为文件；
+      16. -r 当前用户是否有权限读取；
+      17. -w 当前用户是否有权限写入；
+      18. -x 当前用户是否可执行该文件；
+      19. -l 是否为符号链接该文件；
+      20.  -eq  等于
+      21. ne 不等于;
+      22. gt 大于;
+      23. lt小于；
+      24. le 小于或者等于；
+      25. ge 大于或等于；
+      26.  字符串判断条件:= , != ,-z :字符串为空；
+      27. 条件逻辑：if... elif ...else...和case ...in...
+          ```
+          if [ $sco -lt 60 ]
+            then 
+              echo 'it is bad'
+            elif [ $sco -lt 70 ]
+            then
+                  echo 'good'
+            else 
+              echo 'you are very good'	
+            fi
+          ```
+          ```
+                week=`date +%w`
+                case $week in
+                  1)
+                    echo 'work'
+                    ;;
+                  2)
+                        echo 'work2'	
+                    ;;
+                  3) 
+                        echo 'work3'
+
+                        ;;
+                  *) 
+                    echo "$week"
+                    ;;
+                esac	       
+          ```
+  -  shell 之语句循环
+    -  while 循环
+        ```
+            num=3
+            tot=0
+            while [ $num -gt 0 ]
+            do 
+              tot=$[$tot+$num]
+              num=$[$num-1]	
+            done
+              echo $tot
+        ```
+    - for 循环 
+    ```
+    for(( a=0; a<10;a++));
+      do
+          echo $a
+          sleep  1;
+      done
+    ```
+  -  函数function:
+  ```
+  ```
