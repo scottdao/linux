@@ -131,6 +131,23 @@
           sleep  1;
       done
     ```
-  -  函数function:
+  -  [函数function](./loop.sh):
   ```
+        function loop(  ){
+          i=$1;
+        while [ $i -lt 10 ]
+        do
+          if [ $[$i%2] -eq 0 ]
+
+          then
+            echo -e  "\033[37;40m${i}\033[0m"
+          else
+              echo $i
+          fi
+
+            i=$[ $i+1 ]
+        done
+        }
+        loop 0
   ```
+-  [find 命令] (./find.sh)
