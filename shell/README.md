@@ -152,3 +152,4 @@
   ```
 -  [find 命令](./find.sh)
 -  [正则表达式](./reg.sh)
+-  [linux启动流程](./linux.sh)
